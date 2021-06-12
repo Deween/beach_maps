@@ -23,12 +23,15 @@
             <div class="boxContainer">
                 <table class="elementsContainer">
                     <tr>
-                        <td>
-                            <input id="location" onchange = "storeInput(this.value)"  type="text" placeholder="Search" class="search">
-                        </td>
-                        <td>
-                            <button id ="submitBtn" onclick = "apiRequest()" >SEARCH</button>
-                        </td>
+                        <form id = 'place'>
+                            <td>
+                                <input onchange = "storeInput(this.value)" id = "placeInput" type="text" placeholder="Search" class="search">
+                            </td>
+                            <td>
+                                <button onClick = "alertAPI()"id ="submitBtn" >SEARCH</button>
+                            </td>
+                        </form>
+                    </tr>
             </div>
         </div>
     </header>
@@ -43,6 +46,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.5.0/firebase-storage.js"></script>
     <script>
         
     // Your web app's Firebase configuration
