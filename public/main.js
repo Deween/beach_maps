@@ -19,15 +19,12 @@ function nextImage() {
 }
 
 // Setting up a database
+function storeInput(inputVal) {
+  address = inputVal;
+}
 
-const addForm = document.forms['place'];
-console.log(addForm);
-addForm.addEventListener('submit', function(e)
-{
-  e.preventDefault();
-  console.log(e)
-  const inp = addForm.querySelector('#placeInput').value;
-  console.log(inp);
-})
-
+function apiRequest() {
+  let token = address;
+  alert("Address: " + token);
+}
 
