@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        <title>Beach Ahoy!</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+<body>
+    <header class="intro">
+        <div class="intro-slideshow">
+            <img src="images/1.jpg" class="slideshow-img">
+            <img src="images/2.jpg" class="slideshow-img">
+            <img src="images/3.jpg" class="slideshow-img">
+            <img src="images/4.jpg" class="slideshow-img">
+            <img src="images/5.jpg" class="slideshow-img">
+        </div>
+        <div class="intro-header">
+            <h1>Beach Ahoy!</h1>
+            <p>Enter address to find your beach!</p>
+            <div class="boxContainer">
+                <table class="elementsContainer">
+                    <tr>
+                        <td>
+                            <input id="location" type="text" placeholder="Search" class="search">
+                        </td>
+                        <td>
+                            <button id ="submitBtn" >SEARCH</button>
+                        </td>
+            </div>
+        </div>
+    </header>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script>
+        
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyCL_euBx2_AI6v38ZeM7yirWTBzbh6DKu0",
+        authDomain: "beachahoi-8905b.firebaseapp.com",
+        databaseURL: "https://beachahoi-8905b-default-rtdb.firebaseio.com",
+        projectId: "beachahoi-8905b",
+        storageBucket: "beachahoi-8905b.appspot.com",
+        messagingSenderId: "806850185452",
+        appId: "1:806850185452:web:beaa482307da88b1067dc9",
+        measurementId: "G-1V9LNBJ952"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+
+    <script src="main.js" defer> </script>
+
+
+
+  </body>
+</html>
