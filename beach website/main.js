@@ -22,3 +22,9 @@ function nextImage() {
 
 
 //SEARCH BAR & FIREBASE INTERGRATION
+let submitBtn = document.getElementById("submitBtn")
+
+submitBtn.addEventListener("click",()=> 
+{
+    let firebaseRef = firebase
+})
