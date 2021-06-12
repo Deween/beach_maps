@@ -17,3 +17,17 @@ function nextImage() {
   // slideshowImages[currentImageCounter].style.display = "block";
   slideshowImages[currentImageCounter].style.opacity = 1;
 }
+
+// Setting up a database
+
+const addForm = document.forms['place'];
+console.log(addForm);
+addForm.addEventListener('submit', function(e)
+{
+  e.preventDefault();
+  console.log(e)
+  const inp = addForm.querySelector('#placeInput').value;
+  console.log(inp);
+})
+
+
