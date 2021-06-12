@@ -5,6 +5,7 @@
 
     </head>
 
+    <h1 id = 'bigOne'></h1>
     <body>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div id="navbarBasicExample" class="center">
@@ -19,7 +20,7 @@
         </div>
 
 
-        <script src = "script.js"></script>
+
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
 
@@ -42,6 +43,10 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+
+        let bigOne  = document.getElementById('bigOne');
+        let dbRef = firebase.databse().ref().child('text');
+        dbRef.on('value', snap => bigOne.innerText = snap.val());
         </script>
 
     </body>
