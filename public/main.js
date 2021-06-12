@@ -23,5 +23,6 @@ function storeInput(inputVal) {
 }
 
 function apiRequest() {
-  alert("Address: " + address);
+  let token = address;
+  alert("Address: " + token);
 }
