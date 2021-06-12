@@ -1,3 +1,5 @@
+//SLIDE SHOW
+
 const slideshowImages = document.querySelectorAll(".intro-slideshow img");
 
 const nextImageDelay = 5000;
@@ -17,3 +19,6 @@ function nextImage() {
   // slideshowImages[currentImageCounter].style.display = "block";
   slideshowImages[currentImageCounter].style.opacity = 1;
 }
+
+
+//SEARCH BAR & FIREBASE INTERGRATION
