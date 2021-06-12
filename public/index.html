@@ -19,15 +19,15 @@
         </div>
         <div class="intro-header">
             <h1>Beach Ahoy!</h1>
-            <p>Enter address to find your beach!</p>
+            <p>Enter your address to find your beach!</p>
             <div class="boxContainer">
                 <table class="elementsContainer">
                     <tr>
                         <td>
-                            <input id="location" type="text" placeholder="Search" class="search">
+                            <input id="location" onchange = "storeInput(this.value)"  type="text" placeholder="Search" class="search">
                         </td>
                         <td>
-                            <button id ="submitBtn" >SEARCH</button>
+                            <button id ="submitBtn" onclick = "apiRequest()" >SEARCH</button>
                         </td>
             </div>
         </div>
