@@ -10,6 +10,7 @@
   height: 400px;
   width: 100%;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #000;
@@ -49,10 +50,37 @@ body {
   right:0;
 }
 
+.intro .display {
+  position:absolute;
+  bottom:5%;
+  right:45%;
+}
+
+#desc {
+  padding: 1rem 3rem;
+  font-size: 40px;
+  margin-right: -400px;
+  margin-top: -300px;
+} 
+
+#temp {
+  font-size: 40px;
+  margin-right: -400px;
+} 
+
+#map {
+  position:absolute;
+  left: 300px;
+  bottom: 50px;
+  width: 500px;
+  height: 500px;
+}
+
 .intro .intro-header {
   border-radius: 0.5rem;
   padding: 2rem 10rem;
   background-color: rgba(0,0,0,0.5);
+  margin-top: -450px;
 }
 .intro h1 {
   font-size: 4rem;
@@ -60,12 +88,7 @@ body {
 }
 .intro p {
   font-size: 1.75rem;
-}
-.intro .intro-header .boxContainer {
-  margin:auto;
-  margin-top: 5%;
-  margin-left: 3%; /* move bar to the right a bit */
-  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .intro input,button {

@@ -31,7 +31,7 @@
                                 <input id = "autocomplete" type="text" placeholder="Search" >
                             </td>
                             <td>
-                                <button id ="submitBtn" >SEARCH</button>
+                                <button id ="submitBtn" type="button">SEARCH</button>
                             </td>
                             <td>
                                 <p id="details"></p>
@@ -39,7 +39,11 @@
                         </form>
                   </tr>
             </div>
-            <div id = "map"></div>
+        </div>
+        <div id = "map"></div>
+        <div class="display">
+            <p id="desc"></p>
+            <p id="temp"></p>
         </div>
     </header>
 
@@ -76,10 +80,6 @@
     <script
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANso2rcGXQQY850G3SgTWtBc5Vs26C1Pg&libraries=places&callback=initMap"  async defer >
     </script>
-    
-    
-
-
 
   </body>
 </html>

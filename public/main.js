@@ -61,6 +61,12 @@ function onPlaceClick(){
     //Show details of the valid place
     document.getElementById('details').innerHTML = place.name;
   }
-  
-
 }
+
+document.getElementById("submitBtn").addEventListener("click", function() {
+  document.getElementById("desc").innerHTML = "Sunny";
+  document.getElementById("temp").innerHTML = "25 C";
+  document.getElementById("desc").style.backgroundColor = "rgba(0,0,0,0.5)";
+  document.getElementById("temp").style.backgroundColor = "rgba(0,0,0,0.5)";
+
+});
