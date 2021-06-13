@@ -21,27 +21,29 @@ function nextImage() {
 let mapPlacementLat= 42.3601 
 let mapPlacementLng =-71.0598;
 let address;
+let dataPretty;
 
 //MAP VIEWING
 function initMap(){
   //map options
   
-  // let options_map= {
-  //   zoom: 14,
-  //   center:{lat: mapPlacementLat, lng: mapPlacementLng}
-  // }
-  // //new map 
-  // let map = new google.maps.Map(document.getElementById('map'),options_map);
+  let options_map= {
+    zoom: 14,
+    center:{lat: mapPlacementLat, lng: mapPlacementLng}
+  }
+  //new map 
+  let map = new google.maps.Map(document.getElementById('map'),options_map);
 
   //Adding a marker 
   // let marker = new google.maps.Map({
   //   position:{lat:42.4668,lng:-70.9695},
   //   map:map
   // });
+  
+  
   initAutocomplete();
   
 }
-
 
 // AUTOCOMPLETE FUNCTIONALITY
 let autocomplete;
@@ -94,11 +96,74 @@ function geocode(location){
       }
       //new map 
     let map = new google.maps.Map(document.getElementById('map'),options_map);
-    
+    weatherJSONCoordinates(mapPlacementLat, mapPlacementLng);
+
   })
   .catch(function(error){
     console.log(error);
   })
 }
 
+
+// WEATHER API
+
+const API_KEY = "ed8b789eecee129309891dfe30f9a4c6"
+
+// weather by city
+function weatherJSONLocation(city, stateCode = null, countryCode = null) {
+    var url;
+
+    if (stateCode == null) {
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`;
+    } else if (countryCode == null) {
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode}&APPID=${API_KEY}`;
+    } else {
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${countryCode}&APPID=${API_KEY}`;
+    }
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+                    console.log(data);
+                    const body = document.querySelector("body");
+                    const dataPretty = JSON.stringify(data, null, 2); 
+                    body.insertAdjacentHTML("beforeend", `<h1> ${dataPretty} <\h1>`);
+                  });
+}
+
+// weather by coordinates
+function weatherJSONCoordinates(lat, lon) {
+    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+                    console.log(data);
+                    const weather = document.querySelector("#weather");
+                    console.log(data['main']['temp'])
+                    weather.innerHTML = data['main']['temp']
+                    dataPretty = JSON.stringify(data, null, 2);
+
+                    // weather.innerHTML = dataPretty.main.feels_like
+                    // console.log(dataPretty.main[0].feels_like)
+                    // body.insertAdjacentHTML("beforeend", `<h1> ${dataPretty} <\h1>`);
+                  });
+}
+// weather by zipcode
+function weatherJSONZipCode(zipCode, countryCode) {
+    var url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&APPID=${API_KEY}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+                    console.log(data);
+                    const body = document.querySelector("body");
+                    dataPretty = JSON.stringify(data, null, 2); 
+                    body.insertAdjacentHTML("beforeend", `<h1> ${dataPretty} <\h1>`);
+                  });
+}
+
+// weatherJSONLocation("Austin", "TX", "US");
+
+// weatherJSONZipCode(32605, "US");
 
