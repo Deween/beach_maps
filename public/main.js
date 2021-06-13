@@ -134,15 +134,37 @@ function weatherJSONLocation(city, stateCode = null, countryCode = null) {
 
 // weather by coordinates
 function weatherJSONCoordinates(lat, lon) {
-    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}`;
+    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=imperial&exclude=hourly`;
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
                     console.log(data);
                     const weather = document.querySelector("#weather");
+                    const status = document.querySelector('#status')
+                    const icon = document.querySelector(".display")
+                    console.log(icon)
+                    let weather_icon = data['weather'][0]['icon']
+                    console.log(weather_icon)
+
+                    //Getting image of the weather of that day
+                    let img = document.createElement("img")
+                    img.src = `https://openweathermap.org/img/wn/${weather_icon}@2x.png`
+          
+                    console.log(img)
+                    icon.appendChild(img);
+
+                    //defining what a good or a bad day is in terms of weather
+                    if(data['main']['temp'] >= 75 && data['main']['temp'] <= 95){
+                      status.innerHTML = "Perfect!"
+                    } else if(data['main']['temp'] < 75 ){
+                      status.innerHTML = "Too Cold"
+                    } else if(data['main']['temp']  > 95 ){
+                      status.innerHTML = "Too Warm"
+                    }
                     console.log(data['main']['temp'])
                     weather.innerHTML = data['main']['temp']
+                    // status.innerHTML = data['main']['temp']
                     dataPretty = JSON.stringify(data, null, 2);
 
                     // weather.innerHTML = dataPretty.main.feels_like

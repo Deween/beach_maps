@@ -6,10 +6,10 @@
   box-sizing: border-box;
 }
 
-#map{
+/* #map{
   height: 400px;
   width: 100%;
-}
+} */
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -54,26 +54,40 @@ body {
   position:absolute;
   bottom:5%;
   right:45%;
+  margin:  20px 5px;
+  
 }
 
-#desc {
+#status {
   padding: 1rem 3rem;
   font-size: 40px;
-  margin-right: -400px;
-  margin-top: -300px;
+  margin-right: -550px;
+  margin-top: -350px;
 } 
 
 #weather {
   font-size: 40px;
-  margin-right: -400px;
+  margin-right: -620px;
 } 
+img{
+  margin-right: -620px;
+}
+
+#map_div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
 
 #map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
   position:absolute;
   left: 300px;
-  bottom: 50px;
-  width: 500px;
-  height: 500px;
+  bottom: 100px;
+  width: 400px;
+  height: 400px;
 }
 
 .intro .intro-header {
@@ -122,3 +136,110 @@ body {
   .intro h1 { font-size: 2.5rem; }
   .intro p { font-size: 1.25rem; }
 }
+
+.cloudy
+{ 
+  position: absolute;
+	top:25%;
+	left:45%;
+	background:linear-gradient( to top right, rgba(63,81,181,1) 0%,
+	rgba(3,155,229 ,1) 40%);
+	box-shadow: 1px 1px 30px rgba(2,119,189 ,1);
+
+}
+.cloud
+{
+position: absolute;
+	top:5%;
+	left:70%;
+	width:200px;
+	height: 20px;
+	border-radius:10px;
+	background-color: rgba(129,212,250 ,1);
+	box-shadow: 1px 1px 30px rgba(0,151,167 ,1);
+animation: move 1s infinite linear ;
+
+}
+.cloudx
+{
+	/* position: absolute; */
+	top:23%;
+	left:55%;
+	width:60px;
+	height: 20px;
+	border-radius:10px;
+	background-color: rgba(129,212,250 ,1);
+	animation: move 8s infinite linear ;
+
+}
+@keyframes inex {
+
+
+	50% {
+	opacity: 0.4;
+
+	}
+	60%
+	{
+		opacity: 1;
+	}
+}
+@keyframes move {
+
+
+	50% {
+	transform: translateX(-100px);
+
+	}
+}
+@keyframes fall {
+10%
+{
+	opacity:0.8;
+}
+
+	50% {
+		opacity:1;
+	transform: translate(-10px,30px);
+
+	}
+	100%
+	{
+		transform: translate(-25px,70px);
+
+		
+	}
+}
+@keyframes flash
+{
+	48%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	50%
+	{
+		background-color: #fff;
+	}
+	55%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	57%
+	{
+		background-color: #fff;	
+	}
+}
+@keyframes meteor
+{
+
+10%
+{opacity: 1;
+}
+80%	
+{
+left:10%;
+top:75%;
+opacity: 0;
+}
+}
+
