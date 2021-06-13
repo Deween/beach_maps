@@ -98,6 +98,7 @@ function geocode(location){
       //new map 
     let map = new google.maps.Map(document.getElementById('map'),options_map);
     weatherJSONCoordinates(mapPlacementLat, mapPlacementLng);
+    solarRadiationCurrentJSONCoordinates(mapPlacementLat, mapPlacementLng);
 
   })
   .catch(function(error){
@@ -163,7 +164,7 @@ function weatherJSONCoordinates(lat, lon) {
                       status.innerHTML = "Too Warm"
                     }
                     console.log(data['main']['temp'])
-                    weather.innerHTML = data['main']['temp']
+                    weather.innerHTML = data['main']['temp'] + "˚F"
                     // status.innerHTML = data['main']['temp']
                     dataPretty = JSON.stringify(data, null, 2);
 
@@ -186,7 +187,53 @@ function weatherJSONZipCode(zipCode, countryCode) {
                   });
 }
 
-// weatherJSONLocation("Austin", "TX", "US");
+const solar_API_KEY = "ed8b789eecee129309891dfe30f9a4c6"
 
-// weatherJSONZipCode(32605, "US");
+// current solar radiation by coordinates
+function solarRadiationCurrentJSONCoordinates(lat, lon) {
+    var url = `http://api.openweathermap.org/data/2.5/solar_radiation?lat=${lat}&lon=${lon}&appid=${solar_API_KEY}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+                    console.log(data);
+                    const solarRadGHI = document.querySelector("#ghi");
+                    let ghi = data['list'][0]['radiation']['ghi'];
+                    console.log(ghi);
+                    if(ghi < 1000){
+                      solarRadGHI.innerHTML = "Radiation: " + "Great";
+                    } else {
+                      solarRadGHI.innerHTML = "Radiation: " + "Stay Home";
+                    }
+        
+                    // solarRadGHI.innerHTML = "Radiation: " + ghi;
+                    // const solarRadDNI = document.querySelector("dni");
+
+
+
+
+                    // const dataPretty = JSON.stringify(data, null, 2); 
+                    // body.insertAdjacentHTML("beforeend", `<h1> ${dataPretty} <\h1>`);
+                  });
+}
+
+// forecast solar radiation by coordinates
+function solarRadiationForecastJSONCoordinates(lat, lon) {
+    var url = `http://api.openweathermap.org/data/2.5/solar_radiation/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+                    console.log(data);
+                    const body = document.querySelector("body");
+                    const dataPretty = JSON.stringify(data, null, 2); 
+                    body.insertAdjacentHTML("beforeend", `<h1> ${dataPretty} <\h1>`);
+                  });
+}
+
+// demo
+// solarRadiationCurrentJSONCoordinates(0, 0);
+// solarRadiationForecastJSONCoordinates(0, 0);
+
+ 
 
