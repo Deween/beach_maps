@@ -26,14 +26,18 @@
                     <tr>
                         <form id = 'place'>
                             <td>
-                                <input onchange = "storeInput(this.value)" id = "placeInput" type="text" placeholder="Search" class="search">
+                                <input id = "autocomplete" type="text" placeholder="Search" >
                             </td>
                             <td>
-                                <button onClick = "alertAPI()"id ="submitBtn" >SEARCH</button>
+                                <button id ="submitBtn" >SEARCH</button>
+                            </td>
+                            <td>
+                                <p id="details"></p>
                             </td>
                         </form>
-                    </tr>
+                  </tr>
             </div>
+            <div id = "map"></div>
         </div>
     </header>
 
@@ -47,7 +51,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-    <script src="/__/firebase/8.5.0/firebase-storage.js"></script>
+    <!-- <script src="/__/firebase/8.5.0/firebase-storage.js"></script> -->
     <script>
         
     // Your web app's Firebase configuration
@@ -66,8 +70,12 @@
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     </script>
-
     <script src="main.js" defer> </script>
+    <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANso2rcGXQQY850G3SgTWtBc5Vs26C1Pg&libraries=places&callback=initMap"  async defer >
+    </script>
+    
+    
 
 
 
