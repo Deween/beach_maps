@@ -143,7 +143,7 @@ function weatherJSONCoordinates(lat, lon) {
                     const weather = document.querySelector("#weather");
                     const status = document.querySelector('#status')
                     // const icon = document.querySelector(".img")
-                    console.log(icon)
+                    //  console.log(icon)
                     // let weather_icon = data['weather'][0]['icon']
                     // console.log(weather_icon)
 
