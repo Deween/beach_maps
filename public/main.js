@@ -27,12 +27,12 @@ let dataPretty;
 function initMap(){
   //map options
   
-  let options_map= {
-    zoom: 14,
-    center:{lat: mapPlacementLat, lng: mapPlacementLng}
-  }
-  //new map 
-  let map = new google.maps.Map(document.getElementById('map'),options_map);
+  // let options_map= {
+  //   zoom: 14,
+  //   center:{lat: mapPlacementLat, lng: mapPlacementLng}
+  // }
+  // //new map 
+  // let map = new google.maps.Map(document.getElementById('map'),options_map);
 
   //Adding a marker 
   // let marker = new google.maps.Map({
@@ -142,17 +142,17 @@ function weatherJSONCoordinates(lat, lon) {
                     console.log(data);
                     const weather = document.querySelector("#weather");
                     const status = document.querySelector('#status')
-                    const icon = document.querySelector(".display")
+                    // const icon = document.querySelector(".img")
                     console.log(icon)
-                    let weather_icon = data['weather'][0]['icon']
-                    console.log(weather_icon)
+                    // let weather_icon = data['weather'][0]['icon']
+                    // console.log(weather_icon)
 
                     //Getting image of the weather of that day
-                    let img = document.createElement("img")
-                    img.src = `https://openweathermap.org/img/wn/${weather_icon}@2x.png`
+                    // let img = document.createElement("img")
+                    // icon.src = `https://openweathermap.org/img/wn/${weather_icon}@2x.png`
           
-                    console.log(img)
-                    icon.appendChild(img);
+                    // console.log(img)
+                    // icon.appendChild(img);
 
                     //defining what a good or a bad day is in terms of weather
                     if(data['main']['temp'] >= 75 && data['main']['temp'] <= 95){
