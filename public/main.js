@@ -116,11 +116,11 @@ function weatherJSONLocation(city, stateCode = null, countryCode = null) {
     var url;
 
     if (stateCode == null) {
-        url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`;
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`;
     } else if (countryCode == null) {
-        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode}&APPID=${API_KEY}`;
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode}&APPID=${API_KEY}`;
     } else {
-        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${countryCode}&APPID=${API_KEY}`;
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${countryCode}&APPID=${API_KEY}`;
     }
 
     fetch(url)
@@ -135,7 +135,7 @@ function weatherJSONLocation(city, stateCode = null, countryCode = null) {
 
 // weather by coordinates
 function weatherJSONCoordinates(lat, lon) {
-    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=imperial&exclude=hourly`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}&units=imperial&exclude=hourly`;
 
     fetch(url)
     .then(response => response.json())
@@ -175,7 +175,7 @@ function weatherJSONCoordinates(lat, lon) {
 }
 // weather by zipcode
 function weatherJSONZipCode(zipCode, countryCode) {
-    var url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&APPID=${API_KEY}`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&APPID=${API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
@@ -191,7 +191,7 @@ const solar_API_KEY = "ed8b789eecee129309891dfe30f9a4c6"
 
 // current solar radiation by coordinates
 function solarRadiationCurrentJSONCoordinates(lat, lon) {
-    var url = `http://api.openweathermap.org/data/2.5/solar_radiation?lat=${lat}&lon=${lon}&appid=${solar_API_KEY}`;
+    var url = `https://api.openweathermap.org/data/2.5/solar_radiation?lat=${lat}&lon=${lon}&appid=${solar_API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
@@ -219,7 +219,7 @@ function solarRadiationCurrentJSONCoordinates(lat, lon) {
 
 // forecast solar radiation by coordinates
 function solarRadiationForecastJSONCoordinates(lat, lon) {
-    var url = `http://api.openweathermap.org/data/2.5/solar_radiation/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    var url = `https://api.openweathermap.org/data/2.5/solar_radiation/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
