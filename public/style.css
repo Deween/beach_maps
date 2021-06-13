@@ -37,6 +37,13 @@ body {
   display: block;
   opacity: 1;
 } */
+
+.intro .intro-logo {
+  position:absolute;
+  top:0;
+  right:0;
+}
+
 .intro .intro-header {
   border-radius: 0.5rem;
   padding: 2rem 10rem;
