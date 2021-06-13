@@ -1,3 +1,4 @@
+
 const slideshowImages = document.querySelectorAll(".intro-slideshow img");
 
 const nextImageDelay = 5000;
@@ -73,6 +74,12 @@ function onPlaceClick(){
     address = place.adr_address;
     geocode(address)
   }
+
+document.getElementById("submitBtn").addEventListener("click", function() {
+document.getElementById("desc").innerHTML = "Sunny";
+document.getElementById("temp").innerHTML = "25 C";
+document.getElementById("desc").style.backgroundColor = "rgba(0,0,0,0.5)";
+document.getElementById("temp").style.backgroundColor = "rgba(0,0,0,0.5)";
 
 }
 
@@ -166,4 +173,5 @@ function weatherJSONZipCode(zipCode, countryCode) {
 // weatherJSONLocation("Austin", "TX", "US");
 
 // weatherJSONZipCode(32605, "US");
+
 

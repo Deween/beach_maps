@@ -32,6 +32,7 @@
                             </td>
                             <td>
                                 <button type="button" id ="submitBtn" >SEARCH</button>
+
                             </td>
                             <td>
                                 <p id="details"></p>
@@ -39,7 +40,13 @@
                         </form>
                   </tr>
             </div>
+
         </div>
+        <div id = "map"></div>
+        <div class="display">
+            <div id = "weather"></div>
+            <p id="desc"></p>
+            <p id="temp"></p>
     </header>
     
 
@@ -77,12 +84,6 @@
          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANso2rcGXQQY850G3SgTWtBc5Vs26C1Pg&libraries=places&callback=initMap"  async defer >
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    
-    <div id = "map"></div>  
-    <div id = "weather"></div>
-
-    
 
   </body>
   
