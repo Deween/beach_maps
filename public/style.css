@@ -10,6 +10,17 @@
   height: 400px;
   width: 100%;
 } */
+@keyframes minecraft {
+  from { font-size: 40px; }
+  to { font-size: 60px; }
+}
+
+.intro h1 { 
+  animation-name: minecraft;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -51,25 +62,32 @@ body {
 }
 
 .intro .display {
+  padding: 2rem 2rem;
   position:absolute;
-  bottom:5%;
-  right:45%;
-  margin:  20px 5px;
-  /* border: 10px solid red; */
-  
+  bottom:10%;
+  right:15%;
+  margin:20px 5px;
+  background-color: rgba(0,0,0,0.5);
 }
 
+
 #status {
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
   font-size: 40px;
-  margin-right: -550px;
-  margin-top: -350px;
+
 } 
 
 #weather {
+  padding: 1rem 1rem;
   font-size: 40px;
-  margin-right: -620px;
+}
+
+#ghi {
+  padding: 1rem 1rem;
+  font-size: 40px;
+
 } 
+
 .img{
   /* position: absolute; */
   margin-right: -620px;
