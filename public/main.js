@@ -1,4 +1,3 @@
-
 const slideshowImages = document.querySelectorAll(".intro-slideshow img");
 
 const nextImageDelay = 5000;
@@ -59,6 +58,7 @@ function initAutocomplete(){
     }
   )
   autocomplete.addListener('place_changed', onPlaceClick);
+  
 }
 
 
@@ -74,12 +74,6 @@ function onPlaceClick(){
     address = place.adr_address;
     geocode(address)
   }
-
-document.getElementById("submitBtn").addEventListener("click", function() {
-document.getElementById("desc").innerHTML = "Sunny";
-document.getElementById("temp").innerHTML = "25 C";
-document.getElementById("desc").style.backgroundColor = "rgba(0,0,0,0.5)";
-document.getElementById("temp").style.backgroundColor = "rgba(0,0,0,0.5)";
 
 }
 
@@ -121,11 +115,11 @@ function weatherJSONLocation(city, stateCode = null, countryCode = null) {
     var url;
 
     if (stateCode == null) {
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`;
     } else if (countryCode == null) {
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode}&APPID=${API_KEY}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode}&APPID=${API_KEY}`;
     } else {
-        url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${countryCode}&APPID=${API_KEY}`;
+        url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${stateCode},${countryCode}&APPID=${API_KEY}`;
     }
 
     fetch(url)
@@ -140,7 +134,7 @@ function weatherJSONLocation(city, stateCode = null, countryCode = null) {
 
 // weather by coordinates
 function weatherJSONCoordinates(lat, lon) {
-    var url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}`;
+    var url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
@@ -158,7 +152,7 @@ function weatherJSONCoordinates(lat, lon) {
 }
 // weather by zipcode
 function weatherJSONZipCode(zipCode, countryCode) {
-    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&APPID=${API_KEY}`;
+    var url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&APPID=${API_KEY}`;
 
     fetch(url)
     .then(response => response.json())
@@ -173,5 +167,4 @@ function weatherJSONZipCode(zipCode, countryCode) {
 // weatherJSONLocation("Austin", "TX", "US");
 
 // weatherJSONZipCode(32605, "US");
-
 
