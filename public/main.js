@@ -36,7 +36,7 @@ function initMap(){
   initAutocomplete();
 }
 
-let autocomplet;
+let autocomplete;
 function initAutocomplete(){
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById('autocomplete'),
